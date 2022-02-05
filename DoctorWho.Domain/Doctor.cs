@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DoctorWho.Domain
+{
+    public class Doctor
+    {
+        public int DoctorId { get; set; }
+        public long DoctorNumber { get; set; }
+        public string DoctorName { get; set; }
+        public string BirthDate { get; set; }
+        public string FirstEpisodeDate { get; set; }
+        public string LastEpisodeDate { get; set; }
+    }
+}
