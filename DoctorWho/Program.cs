@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DoctorWho.Data;
+using DoctorWho.Domain;
+using System;
+using System.Collections.Generic;
 
 namespace DoctorWho
 {
@@ -6,7 +9,8 @@ namespace DoctorWho
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+
         }
     }
 }
