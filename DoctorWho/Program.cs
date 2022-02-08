@@ -1,5 +1,5 @@
 ﻿using DoctorWho.Data;
-using DoctorWho.Domain;
+using DoctorWho.Data.DataModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace DoctorWho
         private static DoctorWhoCoreDbContext _context = new DoctorWhoCoreDbContext();
         static void Main(string[] args)
         {
-            
+
 
         }
         private static void ViewEpisodes()
@@ -21,9 +21,9 @@ namespace DoctorWho
             var stats = _context.ViewEpisodes.ToList();
             Console.WriteLine(stats.ElementAt(0).AuthorId);
         }
-        private static List<IFrequentCharacters> ExecutespSummariseEpisodes()
+        private static List<IFrequentCharacter> ExecutespSummariseEpisodes()
         {
-            List<IFrequentCharacters> frequentCharacters = new List<IFrequentCharacters>();
+            List<IFrequentCharacter> frequentCharacters = new List<IFrequentCharacter>();
 
             using (var command = _context.Database.GetDbConnection().CreateCommand())
             {
@@ -36,14 +36,14 @@ namespace DoctorWho
                 {
                     int companionId = dataReader.GetInt32(dataReader.GetOrdinal("CompanionId"));
                     int frequency = dataReader.GetInt32(dataReader.GetOrdinal("number"));
-                    frequentCharacters.Add(new FrequentCompanions { CompanionId = companionId, Frequency = frequency });
+                    frequentCharacters.Add(new FrequentCompanion { CompanionId = companionId, Frequency = frequency });
                 }
                 dataReader.NextResult();
                 while (dataReader.Read())
                 {
                     int enemyId = dataReader.GetInt32(dataReader.GetOrdinal("EnemyId"));
                     int frequency = dataReader.GetInt32(dataReader.GetOrdinal("number"));
-                    frequentCharacters.Add(new FrequentEnemies { EnemyId = enemyId, Frequency = frequency });
+                    frequentCharacters.Add(new FrequentEnemy { EnemyId = enemyId, Frequency = frequency });
                 }
             }
             return frequentCharacters;
