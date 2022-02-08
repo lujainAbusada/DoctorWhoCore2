@@ -3,14 +3,16 @@ using DoctorWho.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DoctorWho.Data.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    partial class DoctorWhoCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220206170631_CreateFunctions")]
+    partial class CreateFunctions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DoctorWho.Domain
 {
-    public class EpisodeCompanion
+    public class FrequentCompanions:IFrequentCharacters
     {
-        public int EpisodeId { get; set; }
         public int CompanionId { get; set; }
+        public int Frequency { get; set; }
     }
 }

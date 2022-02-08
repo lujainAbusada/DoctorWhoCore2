@@ -4,16 +4,8 @@ using System.Text;
 
 namespace DoctorWho.Domain
 {
-    public class Episode
+    public partial class ViewEpisodes
     {
-        public Episode()
-        {
-            EpisodeCompanions = new List<EpisodeCompanion>();
-            EpisodeEnemies = new List<EpisodeEnemy>();
-            //Author = new Author();
-            //Doctor = new Doctor();
-        }
-
         public int EpisodeId { get; set; }
         public int SeriesNumber { get; set; }
         public int EpisodeNumber { get; set; }
@@ -21,12 +13,11 @@ namespace DoctorWho.Domain
         public string Title { get; set; }
         public string EpisodeDate { get; set; }
         public string Notes { get; set; }
-
-        public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
-        public Author Author { get; set; }
         public int AuthorId { get; set; }
-        public List<EpisodeCompanion> EpisodeCompanions { get; set; }
-        public List<EpisodeEnemy> EpisodeEnemies { get; set; }
+        public string Authors { get; set; }
+        public string Doctors { get; set; }
+        public string Enemies { get; set; }
+        public string Companions { get; set; }
     }
 }

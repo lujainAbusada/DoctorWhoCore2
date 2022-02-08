@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace DoctorWho.Domain
+namespace DoctorWho.Data.DataModel
 {
     public class Enemy
     {
@@ -15,10 +13,5 @@ namespace DoctorWho.Domain
         public string EnemyName { get; set; }
         public string Description { get; set; }
         public List<EpisodeEnemy> EpisodeEnemies { get; set; }
-
-        public void UpdateEnemyName(int enemyId, string newName)
-        {
-            EnemyName = newName;
-        }
     }
 }

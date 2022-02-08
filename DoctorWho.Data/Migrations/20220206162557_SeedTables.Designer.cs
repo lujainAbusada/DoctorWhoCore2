@@ -3,14 +3,16 @@ using DoctorWho.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DoctorWho.Data.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    partial class DoctorWhoCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220206162557_SeedTables")]
+    partial class SeedTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,63 +269,6 @@ namespace DoctorWho.Data.Migrations
                     b.HasIndex("DoctorId");
 
                     b.ToTable("Episodes");
-
-                    b.HasData(
-                        new
-                        {
-                            EpisodeId = 1,
-                            AuthorId = 1,
-                            DoctorId = 1,
-                            EpisodeDate = "06/02/2015",
-                            EpisodeNumber = 1,
-                            EpisodeType = "Horror",
-                            SeriesNumber = 5,
-                            Title = ""
-                        },
-                        new
-                        {
-                            EpisodeId = 2,
-                            AuthorId = 4,
-                            DoctorId = 3,
-                            EpisodeDate = "25/04/2021",
-                            EpisodeNumber = 100,
-                            EpisodeType = "Drama",
-                            SeriesNumber = 16,
-                            Title = "Legally Blonde"
-                        },
-                        new
-                        {
-                            EpisodeId = 3,
-                            AuthorId = 4,
-                            DoctorId = 2,
-                            EpisodeDate = "08/03/2019",
-                            EpisodeNumber = 1,
-                            EpisodeType = "Sci-Fi",
-                            SeriesNumber = 5,
-                            Title = "Star Wars"
-                        },
-                        new
-                        {
-                            EpisodeId = 4,
-                            AuthorId = 1,
-                            DoctorId = 5,
-                            EpisodeDate = "22/10/2018",
-                            EpisodeNumber = 22,
-                            EpisodeType = "Thriller",
-                            SeriesNumber = 6,
-                            Title = "Fast and Furious"
-                        },
-                        new
-                        {
-                            EpisodeId = 5,
-                            AuthorId = 3,
-                            DoctorId = 2,
-                            EpisodeDate = "16/12/2015",
-                            EpisodeNumber = 2,
-                            EpisodeType = "Comedy",
-                            SeriesNumber = 3,
-                            Title = "Dumb and Dumber"
-                        });
                 });
 
             modelBuilder.Entity("DoctorWho.Domain.EpisodeCompanion", b =>
@@ -339,33 +284,6 @@ namespace DoctorWho.Data.Migrations
                     b.HasIndex("CompanionId");
 
                     b.ToTable("EpisodeCompanion");
-
-                    b.HasData(
-                        new
-                        {
-                            EpisodeId = 1,
-                            CompanionId = 2
-                        },
-                        new
-                        {
-                            EpisodeId = 3,
-                            CompanionId = 5
-                        },
-                        new
-                        {
-                            EpisodeId = 2,
-                            CompanionId = 2
-                        },
-                        new
-                        {
-                            EpisodeId = 4,
-                            CompanionId = 1
-                        },
-                        new
-                        {
-                            EpisodeId = 5,
-                            CompanionId = 4
-                        });
                 });
 
             modelBuilder.Entity("DoctorWho.Domain.EpisodeEnemy", b =>
@@ -381,33 +299,6 @@ namespace DoctorWho.Data.Migrations
                     b.HasIndex("EnemyId");
 
                     b.ToTable("EpisodeEnemy");
-
-                    b.HasData(
-                        new
-                        {
-                            EpisodeId = 4,
-                            EnemyId = 3
-                        },
-                        new
-                        {
-                            EpisodeId = 4,
-                            EnemyId = 5
-                        },
-                        new
-                        {
-                            EpisodeId = 4,
-                            EnemyId = 1
-                        },
-                        new
-                        {
-                            EpisodeId = 2,
-                            EnemyId = 5
-                        },
-                        new
-                        {
-                            EpisodeId = 1,
-                            EnemyId = 1
-                        });
                 });
 
             modelBuilder.Entity("DoctorWho.Domain.Episode", b =>

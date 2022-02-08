@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DoctorWho.Domain
+﻿namespace DoctorWho.Data.DataModel
 {
     public class EpisodeEnemy
     {

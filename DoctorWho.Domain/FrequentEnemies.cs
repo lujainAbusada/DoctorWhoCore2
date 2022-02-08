@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DoctorWho.Domain
 {
-    public class EpisodeEnemy
+    public class FrequentEnemies:IFrequentCharacters
     {
-        public int EpisodeId { get; set; }
         public int EnemyId { get; set; }
+        public int Frequency { get; set; }
     }
 }

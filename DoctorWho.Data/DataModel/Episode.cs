@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace DoctorWho.Domain
+namespace DoctorWho.Data.DataModel
 {
     public class Episode
     {
@@ -10,8 +8,6 @@ namespace DoctorWho.Domain
         {
             EpisodeCompanions = new List<EpisodeCompanion>();
             EpisodeEnemies = new List<EpisodeEnemy>();
-            //Author = new Author();
-            //Doctor = new Doctor();
         }
 
         public int EpisodeId { get; set; }
@@ -21,7 +17,6 @@ namespace DoctorWho.Domain
         public string Title { get; set; }
         public string EpisodeDate { get; set; }
         public string Notes { get; set; }
-
         public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
         public Author Author { get; set; }
@@ -30,3 +25,4 @@ namespace DoctorWho.Domain
         public List<EpisodeEnemy> EpisodeEnemies { get; set; }
     }
 }
+

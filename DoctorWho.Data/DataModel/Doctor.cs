@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace DoctorWho.Domain
+namespace DoctorWho.Data.DataModel
 {
     public class Doctor
     {
@@ -10,6 +8,7 @@ namespace DoctorWho.Domain
         {
             Episodes = new List<Episode>();
         }
+
         public int DoctorId { get; set; }
         public long DoctorNumber { get; set; }
         public string DoctorName { get; set; }
